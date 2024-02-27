@@ -7,12 +7,16 @@ CORS(app)
 @app.route("/")
 def handle():
     table = [
-            "max", "toto", "henry"
+            "max",
+            "toto",
+            "henry"
         ]
+    headerFile = open("./templates/header.html", "r")
     return render_template(
         'index.html',
         userName = "maxence",
-        table = table
+        table = table,
+        header=headerFile.read()
     )
 
 app.run(
