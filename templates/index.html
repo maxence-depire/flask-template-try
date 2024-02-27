@@ -1,3 +1,5 @@
+{% extends 'header.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+    {% block content %}
     <h2>{{ userName }}</h2>
     {% for name in table %}
         <p>{{ name }}</p>
     {% endfor %}
+    salut
+    {% endblock %}
 </body>
 </html>
