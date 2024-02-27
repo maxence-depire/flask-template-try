@@ -6,7 +6,14 @@ CORS(app)
 
 @app.route("/")
 def handle():
-    return render_template('index.html')
+    table = [
+            "max", "toto", "henry"
+        ]
+    return render_template(
+        'index.html',
+        userName = "maxence",
+        table = table
+    )
 
 app.run(
     host='localhost',
