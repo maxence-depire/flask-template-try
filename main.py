@@ -19,6 +19,7 @@ def handleHome():
 
 @app.route("/templates/<path:path>")
 def handleGetFile(path : str):
+    print(path)
     return send_file(f"templates/{path}")
 
 app.run(
