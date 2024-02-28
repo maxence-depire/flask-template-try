@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, send_file
+from flask import Flask, render_template, send_file
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -13,13 +13,8 @@ def handle():
         table = ["max","toto","henry"],
     )
 
-@app.route("/home")
-def handleHome():
-    return redirect("/")
-
 @app.route("/templates/<path:path>")
 def handleGetFile(path : str):
-    print(path)
     return send_file(f"templates/{path}")
 
 app.run(

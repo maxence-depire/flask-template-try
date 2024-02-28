@@ -12,4 +12,19 @@
     <p>{{ name }}</p>
 {% endfor %}
 
+<div id="content"></div>
+
+<script>
+    let value = {{ table|tojson }}
+    console.log(value)
+
+    let content = [];
+    for (let i = 0; i < value['length']; i++) {
+        let item = React.createElement('h2', {}, value[i]);
+        content.push(item);
+    }
+    const app = document.getElementById("content")
+    ReactDOM.render(content, app)
+</script>
+
 {% endblock %}
