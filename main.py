@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, redirect, send_file
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -6,18 +6,20 @@ CORS(app)
 
 @app.route("/")
 def handle():
-    table = [
-            "max",
-            "toto",
-            "henry"
-        ]
-    headerFile = open("./templates/header.html", "r")
     return render_template(
         'index.html',
+        title = "page 2",
         userName = "maxence",
-        table = table,
-        header=headerFile.read()
+        table = ["max","toto","henry"],
     )
+
+@app.route("/home")
+def handleHome():
+    return redirect("/")
+
+@app.route("/templates/<path:path>")
+def handleGetFile(path : str):
+    return send_file(f"templates/{path}")
 
 app.run(
     host='localhost',

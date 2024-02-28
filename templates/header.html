@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>try - FlaskApp</title>
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <link rel="stylesheet" href="/templates/css/index.css">
 </head>
 <body>
     <nav>
@@ -11,11 +12,13 @@
     </nav>
     <hr>
     <div>
-        {% block content %} {% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
+    <hr>
     <nav>
-        <a href="">FlaskApp</a>
-        <a href="">About</a>
+        <a href="">help</a>
+        <a href="">contact</a>
     </nav>
 </body>
 </html>
