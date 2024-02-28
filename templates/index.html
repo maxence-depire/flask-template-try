@@ -1,4 +1,4 @@
-{% extends 'header.html' %}
+{% extends 'frame.html' %}
 
 {% block title %}
 {{ title }}
@@ -16,7 +16,6 @@
 
 <script>
     let value = {{ table|tojson }}
-    console.log(value)
 
     let content = [];
     for (let i = 0; i < value['length']; i++) {
